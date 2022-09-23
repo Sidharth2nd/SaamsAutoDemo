@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {
+            packages: ['corechart']
+        });
+
+        google.charts.setOnLoadCallback(drawChart);
+
+        var attr;
+
+        function showSteps(clicked_object) {
+            attr = clicked_object.parentElement.getAttribute('class');
+            console.log(attr);
+            document.getElementsByClassName("test-cases-list")[0].style.display = "none";
+            document.getElementsByClassName("parent-div-test-steps")[0].style.display = "block";
+            document.getElementsByClassName("table" + attr)[0].style.display = "block";
+            document.getElementsByClassName("table" + attr)[1].style.display = "block";
+            document.getElementsByClassName("table" + attr)[2].style.display = "inline-table";
+        }
+
+        function closeSteps(clicked_object) {
+            attr = clicked_object.getAttribute('id');
+            document.getElementsByClassName("table" + attr)[0].style.display = "none";
+            document.getElementsByClassName("table" + attr)[1].style.display = "none";
+            document.getElementsByClassName("table" + attr)[2].style.display = "none";
+            document.getElementsByClassName("parent-div-test-steps")[0].style.display = "none";
+            document.getElementsByClassName("test-cases-list")[0].style.display = "revert";
+        }
+
+        function showScreeshot(clicked_object) {
+            attr = clicked_object.parentElement.getAttribute('class');
+            console.log(attr);
+
+            document.getElementsByClassName("modal" + attr)[0].style.display = "block";
+        }
+
+        function closeScreenshot(clicked_object) {
+            attr = clicked_object.getAttribute('id');
+            console.log(attr);
+
+            document.getElementsByClassName("modal" + attr)[0].style.display = "none";
+        }
+
+        function drawChart() {
+            var pass = parseInt(document.getElementById('pass').value);
+            var fail = parseInt(document.getElementById('fail').value);
+            var inconclusive = parseInt(document.getElementById('inconclusive').value);
+            var skipped = parseInt(document.getElementById('skipped').value);
+
+            document.getElementById("total-summary").innerHTML = (pass + fail + inconclusive + skipped).toString();
+            document.getElementById("pass-summary").innerHTML = pass.toString();
+            document.getElementById("fail-summary").innerHTML = fail.toString();
+            document.getElementById("inconclusive-summary").innerHTML = inconclusive.toString();
+            document.getElementById("skipped-summary").innerHTML = skipped.toString();
+
+            var data = google.visualization.arrayToDataTable([
+                ['Type', 'Count'],
+                ['Pass', pass],
+                ['Fail', fail],
+                ['Inconclusive', inconclusive],
+                ['Skipped', skipped]
+            ]);
+
+
+            var options = {
+                'title': 'Test Summary',
+                'width': 900,
+                'height': 300,
+                'backgroundColor': {
+                    fill: '#ffffff'
+                },
+                'chartArea': {
+                    'left': 600,
+                    'width': 400
+                },
+                is3D: true
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('container'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: ghostwhite;
+            margin: 10px;
+        }
+
+        .parent {
+            background-color: azure;
+            margin: auto;
+            border-radius: 4px;
+            width: 93%;
+            box-shadow: -13px -4px 38px darkgrey;
+            margin-bottom: 60px;
+        }
+
+        .parent-summary {
+            background-color: azure;
+            margin: -95px 0 50px 52px;
+            border-radius: 4px;
+            box-shadow: -13px -4px 38px darkgrey;
+            width: 1064px;
+            text-align: center;
+        }
+
+        table.parent-summary>tbody>tr {
+            border-width: 1.5px 0 0 0;
+            border-style: solid;
+            border-color: turquoise;
+        }
+
+        table.parent>tbody>tr {
+            border-width: 1.5px 0 0 0;
+            border-style: solid;
+            border-color: turquoise;
+        }
+
+        table.parent>tbody>tr>td:nth-child(1),
+        table.parent>tbody>tr>td:nth-child(3),
+        table.parent>tbody>tr>td:nth-child(4),
+        table.parent>tbody>tr>td:nth-child(5),
+        table.parent>tbody>tr>td:nth-child(6) {
+            text-align: center;
+        }
+
+        table.parent-summary>tbody>tr>td:nth-child(1),
+        table.parent-summary>tbody>tr>td:nth-child(2),
+        table.parent-summary>tbody>tr>td:nth-child(3),
+        table.parent-summary>tbody>tr>td:nth-child(4),
+        table.parent-summary>tbody>tr>td:nth-child(5) {
+            text-align: center;
+        }
+
+        table.parent>tbody>tr>td {
+            font-size: 16px;
+            padding: 12px;
+            background-color: white;
+            font-family: 'Maven Pro', sans-serif;
+        }
+
+        table.parent-summary>tbody>tr>td {
+            font-size: 16px;
+            padding: 12px;
+            background-color: white;
+            font-family: 'Maven Pro', sans-serif;
+        }
+
+        table.parent>thead>tr>th {
+            text-align: center;
+            padding: 14px;
+            color: aqua;
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        table.parent-summary>thead>tr>th {
+            text-align: center;
+            padding: 14px;
+            color: aqua;
+            font-family: monospace;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .test-cases-list {
+            position: sticky;
+            top: 0px;
+            background-color: #010A43;
+        }
+
+        .test-cases-summary {
+            background-color: #010A43;
+        }
+
+        .indicator {
+            padding: 10px;
+            text-align: center;
+            border-radius: 25px;
+            width: 56px;
+        }
+
+        table.parent>tbody>tr>td:nth-child(2)>p:nth-child(1) {
+            font-weight: normal;
+        }
+
+        table.parent>tbody>tr>td:nth-child(2)>p:nth-child(2) {
+            font-size: 9px;
+        }
+
+        table.parent>tbody>tr>td:nth-child(2)>p:nth-child(1),
+        table.parent>tbody>tr>td:nth-child(2)>p:nth-child(2) {
+            margin-bottom: 0px;
+        }
+
+        table.parent>tbody>tr>td:nth-child(2) {
+            width: 500px;
+        }
+
+        .bg-modal {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            top: 0;
+            left: 0px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            width: 1200px;
+            height: 500px;
+            background-color: white;
+            border-radius: 4px;
+        }
+
+        .step-details {
+            top: 78px;
+            background-color: aquamarine;
+            border-radius: 2px;
+            width: 1482px;
+        }
+
+        table.step-details>thead:nth-child(1) {
+            background-color: navy;
+            border-width: 0px 0 6px 0;
+            border-color: aliceblue;
+            position: sticky;
+            top: 0px;
+        }
+
+        table.step-details>thead:nth-child(2) {
+            background-color: navy;
+            border-width: 0px 0 6px 0;
+            border-color: aliceblue;
+            position: sticky;
+            top: 0px;
+        }
+
+        table.step-details>thead>tr>th {
+            color: white;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            font-family: monospace;
+        }
+
+        table.step-details>tbody>tr>td {
+            font-size: 13px;
+            padding: 10px;
+            background-color: aliceblue;
+            font-family: 'Maven Pro', sans-serif;
+        }
+
+        table.step-details>tbody>tr {
+            border-style: solid;
+            border-width: 2px 0 0 0;
+            border-color: gainsboro;
+        }
+
+        table.step-details>tbody>tr>td:nth-child(2) {
+            width: 275px;
+        }
+
+        table.step-details>tbody>tr>td:nth-child(4),
+        table.step-details>tbody>tr>td:nth-child(5) {
+            width: 505px;
+        }
+        /* table.step-details>tbody>tr>td:nth-child(5) {
+    position: relative;
+} */
+
+        table.step-details>tbody>tr>td:nth-child(3) {
+            border-width: 5px;
+            border-style: solid;
+            border-color: aliceblue;
+        }
+
+        table.step-details>tbody>tr>td:nth-child(1),
+        table.step-details>tbody>tr>td:nth-child(3),
+        table.step-details>tbody>tr>td:nth-child(4),
+        table.step-details>tbody>tr>td:nth-child(5) {
+            text-align: center;
+        }
+
+        .cancelbutton {
+            background-color: bisque;
+            width: 64px;
+            height: 31px;
+            position: absolute;
+            right: 11px;
+            top: 7px;
+            font-size: 14px;
+            color: black;
+        }
+
+        .scrolling-div {
+            position: absolute;
+            top: 200px;
+            left: 3px;
+            margin: 0 auto;
+            overflow-y: auto;
+            height: 387px;
+            display:none;
+        }
+
+        .testcaselistname {
+            position: absolute;
+            top: 65px;
+            left: 343px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: floralwhite;
+            font-size: 25px;
+            font-family: monospace;
+            padding: 2px;
+            border-radius: 14px;
+            width: 768px;
+        }
+
+        .taglist {
+            text-align: center;
+            font-size: 10px;
+            padding: 7px;
+            margin: 0 0 0 0;
+            color: yellow;
+        }
+
+        .tagname {
+            text-align: center;
+            padding: 11px;
+            font-size: 14px;
+        }
+
+        .parent-div-test-steps {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 2000px;
+        }
+
+        .close {
+            position: absolute;
+            top: 1px;
+            right: 17px;
+            color: cornsilk;
+            font-size: 24px;
+            font-weight: bold;
+            transition: 0.3s;
+            background-color: unset;
+        }
+
+        .report-title {
+            text-align: center;
+            color: aliceblue;
+            background-color: #010A43;
+            width: 90%;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 0 0 18px 76px;
+            font-size: 22px;
+        }
+
+        .summarylink {
+            margin: 0 0 28px 525px;
+            color: aliceblue;
+            font-size: 17px;
+        }
+
+        .feature-title {
+            font-weight: 100;
+        }
+
+        .casenumber {
+            font-weight: 600;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@100&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/tableStyle.css"> -->
+</head>
+<body>
+<input name=0 type="hidden" id="pass" value=<!--PASSED.COUNT--> />
+<input name=1 type="hidden" id="fail" value=<!--FAILED.COUNT--> />
+<input name=2 type="hidden" id="inconclusive" value=<!--INCONCLUSIVE.COUNT--> />
+<input name=3 type="hidden" id="skipped" value=<!--SKIPPED.COUNT--> />
+
+<div>
+    <img id="spintlyimage" src=<!--LOGO.PATH--> style="position: relative; top: 44px; left: 71px;height: 164px;">
+    <div id="container" style="position: relative;width: 525px;height: 259px;top: -164px;margin: 0 auto;bottom: 57px;"></div>
+
+    <table class="parent-summary">
+        <thead class="test-cases-summary">
+        <tr>
+            <th>Total</th>
+            <th>Pass</th>
+            <th>Fail</th>
+            <th>Inconclusive</th>
+            <th>Skipped</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Total Duration</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="total-summary"></td>
+            <td id="pass-summary"></td>
+            <td id="fail-summary"></td>
+            <td id="inconclusive-summary"></td>
+            <td id="skipped-summary"></td>
+            <td><!--START.TIME--></td>
+            <td><!--END.TIME--></td>
+            <td><!--TOTAL.TIME--></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+    <style>
+        body {background-color: white;}table {background-color: #DCDCDC; text-align: center;}th { background-color: #003399;text-align: center;  color: #FFFFFF; font-family:  Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;font-size: 15px;}tr { background-color: #E6E6E6; color: #1F1F7A;  font-family:  Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;font-size: 13px;}tr.d0 td { background-color: #01A9DB; }h1 { align=center; text-align: center; color: #003399; font-family:  Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;font-size: 25px; }h4 {text-align=right;font-family:  Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;font-size: 13px; }.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}<title>TEST EXECUTION SUMMARY REPORT</title>
+
+
+    </style>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script>
+         google.charts.load('current', {packages: ['corechart']}); google.charts.setOnLoadCallback(drawChart);      function drawChart() {        var data = new google.visualization.DataTable(); var passValue=document.getElementById('pass').value;var intPassValue = parseInt(passValue, 10); var failValue=document.getElementById('fail').value;var intFailValue = parseInt(failValue, 10); var inconclusiveValue=document.getElementById('inconclusive').value;var intInconclusiveValue = parseInt(inconclusiveValue, 10);       data.addColumn('string', 'Group');        data.addColumn('number', 'Gender');        data.addRows([         ['Pass', intPassValue],		    ['Fail', intFailValue],			['Inconclusive', intInconclusiveValue]		        ]);		        var options = {		            'title':'Test Summary',		            'width':400,		            'backgroundColor':'transparent',		            'is3D':true,		            'height':300};		        var chart = new google.visualization.PieChart(		            document.getElementById('status_chart'));		        chart.draw(data, options);		      }
+
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="column"></br></br></br></br></br></br>
+        <table align=center border=3 width=90% style="font-weight: bold;">
+            <th colspan=8>TEST SUMMARY</th>
+            <tr class=d0>
+                <td><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTOTAL&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></td>
+                <td><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPASS&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></td>
+                <td><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFAIL&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b></td>
+                <td><b>INCONCLUSIVE</b></td>
+                <td><b>SKIPPED</b></td>
+                <td><b>START TIME</b></td>
+                <td><b>END TIME</b></td>
+                <td><b>TOTAL DURATION [HH:mm:ss]</b></td>
+            </tr>
+            <tr>
+                <td><b><!--TOTAL.COUNT--></b></td>
+                <td><b><!--PASSED.COUNT--></b></td>
+                <td><b><!--FAILED.COUNT--></b></td>
+                <td><b><!--INCONCLUSIVE.COUNT--></b></td>
+                <td><b><!--SKIPPED.COUNT--></b></td>
+                <td><b><!--START.TIME--></b></td>
+                <td><b><!--END.TIME--></b></td>
+                <td><b><!--TOTAL.TIME--></b></td>
+            </tr>
+        </table>
+    </div>
+    <div align=center id='status_chart' width=30% class="column"></div>
+</div>
+</table><input name=0 type="hidden" id="pass" value=<!--PASSED.COUNT--> />
+<input name=1 type="hidden" id="fail" value=<!--FAILED.COUNT--> />
+<input name=2 type="hidden" id="inconclusive" value=<!--INCONCLUSIVE.COUNT--> />
+<input name=3 type="hidden" id="skipped" value=<!--SKIPPED.COUNT--> />
+
+&nbsp<!--LINK.TO.FAILURE-->&nbsp
+</body>
+</html>

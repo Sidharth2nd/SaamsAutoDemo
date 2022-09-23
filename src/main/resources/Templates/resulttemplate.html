@@ -1,0 +1,322 @@
+<html>
+<head>
+    <style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 2000px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+        body {background-color: white;}table {background-color: #DCDCDC; text-align: center;}th { background-color: #003399;text-align: center;  color: #FFFFFF; font-family:  Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;font-size: 15px;}tr { background-color: white; color: #1F1F7A;  font-family:  Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;font-size: 13px;}tr.d0 td { background-color: #01A9DB; }h1 { align=center; text-align: center; color: #003399; font-family:  Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;font-size: 25px; }h4 {text-align=right;font-family:  Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif;font-size: 13px; }<title>TEST SUMMARY REPORT</title>
+
+   body {
+  color: #6a6c6f;
+  background-color: #f1f3f6;
+  margin-top: 30px;
+}
+
+.container {
+  max-width: 960px;
+}
+
+.table>tbody>tr.active>td,
+.table>tbody>tr.active>th,
+.table>tbody>tr>td.active,
+.table>tbody>tr>th.active,
+.table>tfoot>tr.active>td,
+.table>tfoot>tr.active>th,
+.table>tfoot>tr>td.active,
+.table>tfoot>tr>th.active,
+.table>thead>tr.active>td,
+.table>thead>tr.active>th,
+.table>thead>tr>td.active,
+.table>thead>tr>th.active {
+  background-color: #fff;
+}
+
+.table-bordered > tbody > tr > td,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > td,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > thead > tr > th {
+  border-color: #e4e5e7;
+}
+
+.table tr.header tr.header1{
+  font-weight: bold;
+  background-color: #fff;
+  cursor: pointer;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */
+}
+
+.table tr+tr+tr:not(.header){
+  display: none;
+}
+
+.table .header td:after {
+  content: "\002b";
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  float: right;
+  color: #999;
+  text-align: center;
+  padding: 3px;
+  transition: transform .25s linear;
+  -webkit-transition: -webkit-transform .25s linear;
+}
+.table  tr.header2 {  background-color: #01A9DB;}
+.table .header1 {
+  content: "\002b";
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #999;
+  text-align: center;
+  padding: 3px;
+  transition: transform .25s linear;
+  -webkit-transition: -webkit-transform .25s linear;
+}
+.table .header.active td:after {
+  content: "\2212";
+}
+ .content {
+
+    overflow: hidden;
+    white-space:normal;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
+    /* max-height = line-height (1.2) * lines max number (3) */
+    max-height: 1.2em;
+    /* fix problem when last visible word doesn't adjoin right side  */
+    text-align: left;
+}
+.txtcol{
+
+  color:blue;
+  cursor:pointer;
+}
+.maincontent{
+  display:inline-block;
+  vertical-align:top;
+}
+#more {display: none;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script>
+         google.charts.load('current', {packages: ['corechart']}); google.charts.setOnLoadCallback(drawChart);      function drawChart() {        var data = new google.visualization.DataTable(); var passValue=document.getElementById('pass').value;var intPassValue = parseInt(passValue, 10); var failValue=document.getElementById('fail').value;var intFailValue = parseInt(failValue, 10); var inconclusiveValue=document.getElementById('inconclusive').value;var intInconclusiveValue = parseInt(inconclusiveValue, 10);       data.addColumn('string', 'Group');        data.addColumn('number', 'Gender');        data.addRows([         ['Pass', intPassValue],		    ['Fail', intFailValue],			['Inconclusive', intInconclusiveValue]		        ]);		        var options = {		            'title':'Test Summary',		            'width':400,		            'backgroundColor':'transparent',		            'is3D':true,		            'height':300};		        var chart = new google.visualization.PieChart(		            document.getElementById('status_chart'));		        chart.draw(data, options);		      }
+    </script>
+
+    <script>
+$(document).ready(function() {
+  var ua = navigator.userAgent,
+    event = (ua.match(/iPad/i)) ? "touchstart" : "click";
+  if ($('.table').length > 0) {
+    $('.table .header').on(event, function() {
+      $(this).toggleClass("active", "").nextUntil('.header').css('display', function(i, v) {
+        return this.style.display === 'table-row' ? 'none' : 'table-row';
+      });
+    });
+  }
+});
+
+$(document).ready(function(){
+  $(".content").each(function(){
+    if($(this).height() < $(this)[0].scrollHeight){
+      $(this).parent().find(".txtcol").show();
+    }
+  });
+  $(".txtcol").click(function(){
+    if($(this).prev().hasClass("truncate")) {
+    				$(this).parent().find(".content").css("max-height", $(this).parent().find(".content")[0].scrollHeight);
+            $(this).children('a').text("Show Less");
+        } else {
+    				$(this).parent().find(".content").css("max-height", "1.2em");
+            $(this).children('a').text("Show More");
+        }
+  $(this).prev().toggleClass("truncate");
+
+  });
+});
+
+
+
+function showImage(path){
+ var modal = document.getElementById("myModal");
+ var modalImg = document.getElementById("img01");
+ var captionText = document.getElementById("caption");
+  modal.style.display = "block";
+  modalImg.src = path;
+  captionText.innerHTML = path;
+};
+
+function cc() {
+ var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+};
+
+
+</script>
+
+
+</head>
+<header>
+    <table cellspacing="0" cellpadding="0" width=100% style="font-weight: bold;border:none">
+        <tr >
+            <td colspan="1"><img src=<!--LOGO.PATH--> align=left></td>
+            <td colspan="5" align="center">
+
+            </td> </tr>
+        <th colspan="6"> <a href="../index.html" style="float:left; color: white"> << Back To Summary </a>  <h3> FEATURE EXECUTION REPORT </h3></th>
+    </table>
+</header>
+<body>
+<table align=left border=3 width=70% style="margin-bottom: 25px; font-weight: bold;">
+    <th colspan=6>TEST CASE SUMMARY REPORT</th>
+    <tr class=d0>
+        <td><b>Test script</b></td>
+        <td><b>Status</b></td>
+        <td><b>Start Time</b></td>
+        <td><b>End Time</b></td>
+        <td><b>Duration [HH:mm:ss] </b></td>
+    </tr><!--SUMARRY--></table>
+</table><input name=0 type="hidden" id="pass" value=<!--PASSED.COUNT--> />
+<input name=1 type="hidden" id="fail" value=<!--FAILED.COUNT--> />
+<input name=2 type="hidden" id="inconclusive" value=<!--INCONCLUSIVE.COUNT--> />
+<input name=3 type="hidden" id="skipped" value=<!--SKIPPED.COUNT--> />
+<div align=right width=30% id='status_chart'></div>
+</h1> <br></br><br></br>
+    <table class="table" style="width: 100%; " colspan=5 border="3"><br><br><br>
+        <th colspan="5">TEST SCRIPT DETAILS - <!--FEATURE.NAME--></th>
+            <tr class="header2" >
+                <td><b>Sr. #</b></td>
+            <td><b>Test Step</b></td>
+            <td><b>Step Result</b></td>
+            <td><b>Expected Result</b></td>
+            <td><b>Actual Result</b></td>
+        </tr>
+    <tr><!--DETAILS-->
+</table>
+<table class="table" style="width: 100%; display:none;" colspan=4 border="3"><br><br><br>
+    <th colspan="4">EXECUTION REPORT - <!--FEATURE.NAME--></th>
+    <tr class="header2" >
+        <td><b>Sr.#</b></td>
+        <td><b>Testcase Title</b></td>
+        <td><b>Status</b></td>
+        <td><b>Reason</b></td>
+    </tr>
+    <tr class="header"><!--FAILURE.DETAILS-->
+</table>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <span onclick="cc()" class="close">&times;</span>
+    <img class="modal-content" id="img01" style="width:1000px";>
+    <div id="caption"></div>
+</div>
+
+</body>
+</html>
