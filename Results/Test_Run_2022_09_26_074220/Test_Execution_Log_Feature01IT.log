@@ -1,0 +1,63 @@
+13:13:29 [INFO] : Feature01IT|Hooks|********** Initializing Test on Device :  ************
+13:13:29 [INFO] : Feature01IT|SuiteSetup|PLATFORM : web
+13:13:30 [DEBUG] : Using Log4J as the default logging framework
+13:13:30 [DEBUG] : -Dio.netty.leakDetection.level: simple
+13:13:30 [DEBUG] : -Dio.netty.leakDetection.targetRecords: 4
+13:13:30 [DEBUG] : Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@26b3fd41
+13:13:30 [DEBUG] : -Dio.netty.noUnsafe: false
+13:13:30 [DEBUG] : Java version: 8
+13:13:30 [DEBUG] : sun.misc.Unsafe.theUnsafe: available
+13:13:30 [DEBUG] : sun.misc.Unsafe.copyMemory: available
+13:13:30 [DEBUG] : java.nio.Buffer.address: available
+13:13:30 [DEBUG] : direct buffer constructor: available
+13:13:30 [DEBUG] : java.nio.Bits.unaligned: available, true
+13:13:30 [DEBUG] : jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+13:13:30 [DEBUG] : java.nio.DirectByteBuffer.<init>(long, int): available
+13:13:30 [DEBUG] : sun.misc.Unsafe: available
+13:13:30 [DEBUG] : -Dio.netty.tmpdir: C:\Users\AADITI~1\AppData\Local\Temp (java.io.tmpdir)
+13:13:30 [DEBUG] : -Dio.netty.bitMode: 64 (sun.arch.data.model)
+13:13:30 [DEBUG] : Platform: Windows
+13:13:30 [DEBUG] : -Dio.netty.maxDirectMemory: 827850752 bytes
+13:13:30 [DEBUG] : -Dio.netty.uninitializedArrayAllocationThreshold: -1
+13:13:30 [DEBUG] : java.nio.ByteBuffer.cleaner(): available
+13:13:30 [DEBUG] : -Dio.netty.noPreferDirect: false
+13:13:30 [DEBUG] : org.jctools-core.MpscChunkedArrayQueue: available
+13:13:31 [DEBUG] : -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+13:13:31 [DEBUG] : -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+13:13:33 [DEBUG] : Default protocols (JDK): [TLSv1.2] 
+13:13:33 [DEBUG] : Default cipher suites (JDK): [TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_AES_128_GCM_SHA256, TLS_AES_256_GCM_SHA384]
+13:13:33 [DEBUG] : -Dio.netty.eventLoopThreads: 8
+13:13:33 [DEBUG] : -Dio.netty.noKeySetOptimization: false
+13:13:33 [DEBUG] : -Dio.netty.selectorAutoRebuildThreshold: 512
+13:13:33 [DEBUG] : -Dio.netty.allocator.numHeapArenas: 8
+13:13:33 [DEBUG] : -Dio.netty.allocator.numDirectArenas: 8
+13:13:33 [DEBUG] : -Dio.netty.allocator.pageSize: 8192
+13:13:33 [DEBUG] : -Dio.netty.allocator.maxOrder: 11
+13:13:33 [DEBUG] : -Dio.netty.allocator.chunkSize: 16777216
+13:13:33 [DEBUG] : -Dio.netty.allocator.smallCacheSize: 256
+13:13:33 [DEBUG] : -Dio.netty.allocator.normalCacheSize: 64
+13:13:33 [DEBUG] : -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+13:13:33 [DEBUG] : -Dio.netty.allocator.cacheTrimInterval: 8192
+13:13:33 [DEBUG] : -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+13:13:33 [DEBUG] : -Dio.netty.allocator.useCacheForAllThreads: true
+13:13:33 [DEBUG] : -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+13:13:33 [DEBUG] : -Dio.netty.allocator.type: pooled
+13:13:33 [DEBUG] : -Dio.netty.threadLocalDirectBufferSize: 0
+13:13:33 [DEBUG] : -Dio.netty.maxThreadLocalCharBufferSize: 16384
+13:13:47 [DEBUG] : -Dio.netty.processId: 9108 (auto-detected)
+13:13:48 [DEBUG] : -Djava.net.preferIPv4Stack: false
+13:13:48 [DEBUG] : -Djava.net.preferIPv6Addresses: false
+13:13:48 [DEBUG] : Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+13:13:48 [DEBUG] : Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+13:13:48 [DEBUG] : -Dio.netty.machineId: 70:c9:4e:ff:fe:ec:5c:65 (auto-detected)
+13:13:49 [DEBUG] : -Dio.netty.buffer.checkAccessible: true
+13:13:49 [DEBUG] : -Dio.netty.buffer.checkBounds: true
+13:13:49 [DEBUG] : Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@84f635a
+13:13:49 [DEBUG] : -Dio.netty.recycler.maxCapacityPerThread: 4096
+13:13:49 [DEBUG] : -Dio.netty.recycler.maxSharedCapacityFactor: 2
+13:13:49 [DEBUG] : -Dio.netty.recycler.linkCapacity: 16
+13:13:49 [DEBUG] : -Dio.netty.recycler.ratio: 8
+13:13:49 [DEBUG] : -Dio.netty.recycler.delayedQueue.ratio: 8
+13:14:46 [DEBUG] : brotli4j not in the classpath; Brotli support will be unavailable.
+13:14:48 [DEBUG] : -Dio.netty.initialSeedUniquifier: 0xa0e7bf2dd873a7d5
+13:15:15 [INFO] : Feature01IT|DriverBase|TEST STEP - PASS| Actual Result : Navigated to http://test.smart-access.spintly.com/login url

@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.spintly.Feature01IT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 110.441 s <<< FAILURE! - in com.spintly.Feature01IT
+runScenario(com.spintly.Feature01IT)  Time elapsed: 20.676 s  <<< FAILURE!
+cucumber.runtime.CucumberException: There are undefined steps
+

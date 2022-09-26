@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-@CucumberOptions(features = "target/test-classes/features/web", monochrome = true, tags = "@umtc13-1" , plugin = {
+@CucumberOptions(features = "target/test-classes/features/web", monochrome = true, tags = "@demo1" , plugin = {
         "pretty", "html:target/cucumber-report/single",
         "json:target/cucumber-report/single/cucumber.json",
          "com.spintly.base.support.cucumberEvents.EventsHandler"},

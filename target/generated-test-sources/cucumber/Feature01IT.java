@@ -1,0 +1,56 @@
+package com.spintly;
+import com.spintly.SuiteSetup;
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+import com.spintly.base.support.properties.PropertyUtility;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import com.spintly.runner.Hooks;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.Properties;
+import java.io.IOException;
+import org.apache.commons.lang3.ArrayUtils;
+
+@CucumberOptions(
+        strict = true,
+        features = {"C:/Users/Public/SaamsAutoDemo/SaamsAutoDemo/src/test/resources/features/web/usermanagement/AllUsers.feature"},
+        plugin ={"com.spintly.base.support.cucumberEvents.EventsHandler"},
+        monochrome = true,
+                tags = {},
+                glue = {"com.spintly.web.stepdefinitions"})
+
+public class Feature01IT extends AbstractTestNGCucumberTests {
+    private static final String INITIAL_FILE_NAME="login";
+    String lstallDevice;
+	Hooks hooks;
+
+	@Parameters({"test.Device","test.Platform","test.Environment","test.Category"})
+	public Feature01IT(@Optional("device1") String device, @Optional("web") String Platform, @Optional("QA") String environment, @Optional("sanity") String category){
+	  String ClassName =this.getClass().getSimpleName();
+        lstallDevice=device;
+        System.setProperty("ALL_DEVICES",lstallDevice);
+        System.setProperty("Platform", Platform);
+        System.setProperty("DEVICE", device);
+        System.setProperty("Parallel", "true");
+        System.setProperty("LOGIN_FILE",INITIAL_FILE_NAME);
+        System.setProperty("runner.class", ClassName);
+        PropertyUtility.environment=environment;
+        PropertyUtility.targetPlatform=Platform;
+        this.hooks = new Hooks();
+	}
+
+ 	@Parameters({"NameWithtimestamp","test.Platform","test.Environment"})
+    @BeforeSuite
+    public void start(@Optional("") String resultFolder,@Optional("web") String Platform, @Optional("QA") String environment)
+ 	{
+         try {this.hooks.start(resultFolder); }catch (Exception e){afterSuite(); e.printStackTrace(); }
+ 	}
+    @AfterSuite
+    public  void afterSuite() {
+        try {this.hooks.tearDown();} catch (IOException e1) {  } }
+	}

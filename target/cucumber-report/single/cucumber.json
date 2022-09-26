@@ -1,0 +1,108 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 6817306300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.beforeTest(Scenario)"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "Creating a user",
+        "description": "",
+        "id": "adding-a-user;creating-a-user",
+        "after": [
+          {
+            "result": {
+              "duration": 26327100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.afterTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11517203200,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am on the Spintly web portal",
+            "match": {
+              "location": "AllUsersSteps.i_am_on_the_spintly_web_portal()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 1118700600,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "Hooks.afterStep()"
+                }
+              }
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 12035907900,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I log in",
+            "match": {
+              "location": "AllUsersSteps.i_log_in()"
+            },
+            "after": [
+              {
+                "result": {
+                  "duration": 85440100,
+                  "status": "passed"
+                },
+                "match": {
+                  "location": "Hooks.afterStep()"
+                }
+              }
+            ],
+            "keyword": "When "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@web"
+          },
+          {
+            "name": "@demo1"
+          }
+        ]
+      }
+    ],
+    "name": "Adding a user",
+    "description": "",
+    "id": "adding-a-user",
+    "keyword": "Feature",
+    "uri": "target/test-classes/features/web/usermanagement/AllUsers.feature",
+    "tags": [
+      {
+        "name": "@web",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
