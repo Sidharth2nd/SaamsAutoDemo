@@ -1,0 +1,17 @@
+com\spintly\web\stepdefinitions\usermanagement\AllUsersSteps.class
+com\spintly\api\services\VisitorManagementService.class
+com\spintly\api\services\OrganisationSettingsService.class
+com\spintly\runner\Hooks.class
+com\spintly\api\services\LeaveHolidayManagementService.class
+com\spintly\api\services\OrganizationManagementService.class
+com\spintly\web\pages\usermanagementpage\AllUsersPage.class
+com\spintly\Feature01IT.class
+com\spintly\runner\RunSuite.class
+com\spintly\api\services\AccessManagementService.class
+com\spintly\api\services\ShiftManagementService.class
+com\spintly\api\utilityFunctions\ApiUtility.class
+com\spintly\web\utilityfunctions\GeneralUtility.class
+com\spintly\web\pages\login\LogInPage.class
+com\spintly\api\services\PartnerService.class
+com\spintly\api\services\UserManagementService.class
+com\spintly\api\services\AppService.class
